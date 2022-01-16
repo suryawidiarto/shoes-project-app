@@ -1,0 +1,22 @@
+.qty-container {
+  min-width: 80;
+  margin-top: 1rem;
+  width: 100px;
+  border-radius: 5px;
+
+  .qty-label {
+    color: white;
+  }
+
+  .MuiSelect-select {
+    color: #fff;
+  }
+
+  .MuiSelect-icon {
+    color: #fff;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #fff;
+  }
+}

@@ -1,0 +1,24 @@
+.size-container {
+  min-width: 80;
+  margin-top: 1rem;
+  width: 100px;
+  border-radius: 5px;
+
+  .size-label {
+    color: white;
+  }
+
+  .MuiSelect-select {
+    color: #fff;
+  }
+
+  .MuiSelect-icon {
+    color: #fff;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: #fff;
+  }
+}
+
+//<div required="" class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall size-select css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"><div tabindex="0" role="button" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="size-label" class="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputSizeSmall css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input">38</div><input aria-hidden="true" tabindex="-1" class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput" required="" value="38"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDropDownIcon"><path d="M7 10l5 5 5-5z"></path></svg><fieldset aria-hidden="true" class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"><legend class="css-1z7n62"><span>Size&nbsp;*</span></legend></fieldset></div>
