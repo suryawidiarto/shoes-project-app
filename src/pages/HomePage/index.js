@@ -35,7 +35,7 @@ const HomePage = () => {
             data.items.map((item) => (
               <ProductCard
                 key={item._id}
-                Img={`http://localhost:2000/sp-api-products/product-img/${item.image[0]}`}
+                Img={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.image[0]}`}
                 Title={item.name}
                 Price={item.price}
                 Description={item.description}

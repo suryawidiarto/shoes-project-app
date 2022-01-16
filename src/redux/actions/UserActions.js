@@ -3,7 +3,7 @@ import Axios from "axios";
 export const checkToken = (token) => {
   return async (dispatch) => {
     try {
-      await Axios.get(`http://localhost:2000/sp-api-users/check-token`, {
+      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-users/check-token`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => dispatch({ type: "TOKEN_VALID", payload: res.data }))
@@ -17,7 +17,7 @@ export const checkToken = (token) => {
 export const signUp = (name, email, password) => {
   return async (dispatch) => {
     try {
-      await Axios.post("http://localhost:2000/sp-api-users/add-user", {
+      await Axios.post("https://shoes-project-server.herokuapp.com/sp-api-users/add-user", {
         name,
         email,
         password,
@@ -39,7 +39,7 @@ export const signUp = (name, email, password) => {
 export const signIn = (email, password) => {
   return async (dispatch) => {
     try {
-      await Axios.post("http://localhost:2000/sp-api-users/signin", {
+      await Axios.post("https://shoes-project-server.herokuapp.com/sp-api-users/signin", {
         email,
         password,
       })
@@ -91,7 +91,7 @@ export const getUser = () => {
   return async (dispatch, getState) => {
     try {
       const userData = getState().UserSign.data;
-      await Axios.get(`http://localhost:2000/sp-api-users/profile`, {
+      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-users/profile`, {
         headers: {
           Authorization: `Bearer ${userData.token}`,
         },
@@ -111,7 +111,7 @@ export const updateUser = (userData) => {
     try {
       const userToken = getState().UserSign.data.token;
       await Axios.post(
-        "http://localhost:2000/sp-api-users/update-profile",
+        "https://shoes-project-server.herokuapp.com/sp-api-users/update-profile",
         {
           ...userData,
           password: userData.newPassword,

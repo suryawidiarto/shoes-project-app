@@ -82,7 +82,10 @@ const ProductDetail = () => {
           <img
             className="detail-img"
             alt="detail-img"
-            src={data && `http://localhost:2000/sp-api-products/product-img/${data.image[0]}`}
+            src={
+              data &&
+              `https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${data.image[0]}`
+            }
           />
         </div>
         <form className="detail-form" onSubmit={addToCartHandler}>

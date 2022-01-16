@@ -34,7 +34,7 @@ export const createOrder = (orderData) => {
     try {
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `http://localhost:2000/sp-api-orders/add-order`,
+        `https://shoes-project-server.herokuapp.com/sp-api-orders/add-order`,
         {
           userId: orderData.userId,
           orderedItems: orderData.cart,
@@ -86,7 +86,7 @@ export const getOrderByIdUser = () => {
       const userId = getState().UserSign.data.id;
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `http://localhost:2000/sp-api-orders/ordered`,
+        `https://shoes-project-server.herokuapp.com/sp-api-orders/ordered`,
         {
           userId: userId,
         },
@@ -108,7 +108,7 @@ export const getOrderByOrderId = (orderId) => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.get(`http://localhost:2000/sp-api-orders/order/${orderId}`, {
+      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-orders/order/${orderId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => dispatch({ type: "GET_ORDER_DATA_BY_ORDER_ID", payload: res.data }))
@@ -124,7 +124,7 @@ export const makePayment = (orderId) => {
     try {
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `http://localhost:2000/sp-api-orders/payment`,
+        `https://shoes-project-server.herokuapp.com/sp-api-orders/payment`,
         {
           orderId: orderId,
           isPaid: true,
@@ -151,7 +151,7 @@ export const confirmDelivered = (orderId) => {
     try {
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `http://localhost:2000/sp-api-orders/delivered`,
+        `https://shoes-project-server.herokuapp.com/sp-api-orders/delivered`,
         {
           orderId: orderId,
           isDelivered: true,

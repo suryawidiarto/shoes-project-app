@@ -90,7 +90,7 @@ const AdminDataProduct = () => {
                       <img
                         className="admin-product-image"
                         alt="admin-product-img"
-                        src={`http://localhost:2000/sp-api-products/product-img/${item.image[0]}`}
+                        src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.image[0]}`}
                       />
                     </TableCell>
                     <TableCell align="center">{item.name}</TableCell>

@@ -4,7 +4,7 @@ export const getCartItem = () => {
   return async (dispatch, getState) => {
     try {
       const userData = getState().UserSign.data;
-      await Axios.get("http://localhost:2000/sp-api-users/cart", {
+      await Axios.get("https://shoes-project-server.herokuapp.com/sp-api-users/cart", {
         headers: {
           Authorization: `Bearer ${userData.token}`,
         },
@@ -36,7 +36,7 @@ export const addToCart = (sizeProduct, qtyProduct) => {
       const cartItems = getState().Cart.items;
       const userData = getState().UserSign.data;
       await Axios.post(
-        "http://localhost:2000/sp-api-users/item-cart",
+        "https://shoes-project-server.herokuapp.com/sp-api-users/item-cart",
         {
           cartItems: cartItems,
         },
@@ -60,7 +60,7 @@ export const deleteItemCart = (itemIndex) => {
       const cartItems = getState().Cart.items;
       const userData = getState().UserSign.data;
       await Axios.post(
-        "http://localhost:2000/sp-api-users/item-cart",
+        "https://shoes-project-server.herokuapp.com/sp-api-users/item-cart",
         {
           cartItems: cartItems,
         },
@@ -83,7 +83,7 @@ export const resetItemCart = () => {
       dispatch({ type: "CART_RESET" });
       const userData = getState().UserSign.data;
       await Axios.post(
-        "http://localhost:2000/sp-api-users/item-cart",
+        "https://shoes-project-server.herokuapp.com/sp-api-users/item-cart",
         {
           cartItems: [],
         },

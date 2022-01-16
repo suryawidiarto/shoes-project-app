@@ -140,7 +140,7 @@ const ShippingDetail = () => {
                           <img
                             className="shipping-image"
                             alt="shipping-img"
-                            src={`http://localhost:2000/sp-api-products/product-img/${item.productImage}`}
+                            src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.productImage}`}
                           />
                         </TableCell>
                         <TableCell align="center">{item.productName}</TableCell>

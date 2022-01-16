@@ -4,7 +4,7 @@ export const getAllProductAdmin = () => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.get(`http://localhost:2000/sp-api-products/admin/`, {
+      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-products/admin/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -20,7 +20,9 @@ export const getAllProductAdmin = () => {
 export const getProductByIdAdmin = (productId) => {
   return async (dispatch) => {
     try {
-      await Axios.get(`http://localhost:2000/sp-api-products/product/${productId}`)
+      await Axios.get(
+        `https://shoes-project-server.herokuapp.com/sp-api-products/product/${productId}`
+      )
         .then((res) => dispatch({ type: "ADMIN_GET_PRODUCT_BY_ID", payload: res.data }))
         .catch((err) => dispatch({ type: "ADMIN_PRODUCT_ERROR", payload: err }));
     } catch (err) {
@@ -48,11 +50,15 @@ export const postProductAdmin = (dataProduct) => {
       form.append("size43", dataProduct.productSize43);
       form.append("image", dataProduct.imgFile);
 
-      await Axios.post(`http://localhost:2000/sp-api-products/add-product`, form, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      await Axios.post(
+        `https://shoes-project-server.herokuapp.com/sp-api-products/add-product`,
+        form,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
         .then((res) => dispatch({ type: "ADMIN_POST_PRODUCT", payload: res.data, warn: "success" }))
         .catch((err) => dispatch({ type: "ADMIN_PRODUCT_ERROR", payload: err, warn: "failed" }));
     } catch (err) {
@@ -81,7 +87,7 @@ export const editProductAdmin = (dataProduct) => {
       dataProduct.imgFile && form.append("image", dataProduct.imgFile);
 
       await Axios.post(
-        `http://localhost:2000/sp-api-products/edit-product/${dataProduct.productId}`,
+        `https://shoes-project-server.herokuapp.com/sp-api-products/edit-product/${dataProduct.productId}`,
         form,
         {
           headers: {
@@ -107,9 +113,12 @@ export const deleteProductAdmin = (productId) => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.delete(`http://localhost:2000/sp-api-products/delete-product/${productId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      await Axios.delete(
+        `https://shoes-project-server.herokuapp.com/sp-api-products/delete-product/${productId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
         .then(() => dispatch({ type: "ADMIN_DELETE_PRODUCT", payload: productId, warn: "success" }))
         .catch((err) => dispatch({ type: "ADMIN_PRODUCT_ERROR", payload: err, warn: "failed" }));
     } catch (err) {
@@ -122,7 +131,7 @@ export const getAllOrderAdmin = () => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.get(`http://localhost:2000/sp-api-orders/admin/`, {
+      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-orders/admin/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -139,7 +148,7 @@ export const getOrderByIdAdmin = (orderId) => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.get(`http://localhost:2000/sp-api-orders/order/${orderId}`, {
+      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-orders/order/${orderId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => dispatch({ type: "ADMIN_GET_ORDER_BY_ID", payload: res.data }))
@@ -154,11 +163,14 @@ export const deleteOrderAdmin = (orderId) => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.delete(`http://localhost:2000/sp-api-orders/delete-order/${orderId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      await Axios.delete(
+        `https://shoes-project-server.herokuapp.com/sp-api-orders/delete-order/${orderId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
         .then(() => dispatch({ type: "ADMIN_DELETE_ORDER", payload: orderId, warn: "success" }))
         .catch((err) => dispatch({ type: "ADMIN_ORDER_ERROR", payload: err, warn: "failed" }));
     } catch (err) {

@@ -255,7 +255,7 @@ const AdminEditDataProduct = () => {
                 <img
                   className="edit-upload-img"
                   alt="img-preview"
-                  src={`http://localhost:2000/sp-api-products/product-img/${imgDB}`}
+                  src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${imgDB}`}
                 />
               ) : imgFile && imgPreview ? (
                 <img className="edit-upload-img" alt="img-preview" src={imgPreview} />
