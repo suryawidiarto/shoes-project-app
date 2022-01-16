@@ -1,0 +1,100 @@
+.admin-product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  background-color: #0d0d0d;
+
+  .admin-product-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    .admin-product-add-product {
+      color: #fff;
+      background-color: #ff7800;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f90716;
+      }
+    }
+
+    .admin-product-table-container {
+      max-height: 450px;
+      width: 900px;
+
+      @media screen and (max-width: 950px) {
+        width: 750px;
+      }
+
+      @media screen and (max-width: 780px) {
+        width: 560px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 460px;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: 360px;
+      }
+
+      @media screen and (max-width: 380px) {
+        width: 260px;
+      }
+
+      .admin-product-table {
+        .description {
+          max-width: 30px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .admin-product-image {
+          height: 50px;
+          width: 50px;
+          object-fit: cover;
+        }
+        .admin-product-see-product {
+          text-decoration: none;
+          cursor: pointer;
+          color: #2196f3;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: #ff7800;
+          }
+        }
+
+        .admin-product-edit-product {
+          text-decoration: none;
+          cursor: pointer;
+          color: #24a19c;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: #ff7800;
+          }
+        }
+
+        .admin-product-delete-product {
+          cursor: pointer;
+          text-decoration: none;
+          color: #f90716;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: #ff7800;
+          }
+        }
+      }
+    }
+  }
+}

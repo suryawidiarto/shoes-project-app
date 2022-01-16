@@ -1,0 +1,44 @@
+.order-history-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  background-color: #0d0d0d;
+
+  .order-history-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    .order-history-table-container {
+      max-height: 450px;
+      width: 760px;
+
+      @media screen and (max-width: 780px) {
+        width: 560px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 460px;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: 360px;
+      }
+
+      @media screen and (max-width: 380px) {
+        width: 260px;
+      }
+
+      .order-history-link {
+        text-decoration: none;
+        color: #2196f3;
+
+        &:hover {
+          color: #ff7800;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.sign-container {
+  display: flex;
+  background-color: #0d0d0d;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .sign-logo {
+    position: absolute;
+    left: 2rem;
+    top: 1.5rem;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: #ff7800;
+    }
+  }
+
+  .sign-wrapper {
+    background-color: #fff;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+    color: #0d0d0d;
+
+    .sign-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .sign-title {
+        color: #0d0d0d;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+        margin-top: 1rem;
+      }
+      .sign-button {
+        margin-top: 2rem;
+        background-color: #ff7800;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          background-color: #f90716;
+        }
+      }
+
+      .sign-link {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+
+        .register-link {
+          text-decoration: none;
+          font-weight: 600;
+          color: #f90716;
+          cursor: pointer;
+          transition: 0.1s ease-in-out;
+
+          &:hover {
+            color: #ff7800;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.main-nav-container {
+  background-color: #040303;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  .main-nav-title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-nav-logo {
+      font-size: 22px;
+      margin-left: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+
+      &:hover {
+        color: #ff7800;
+        transition: 0.1s ease-in-out;
+      }
+    }
+
+    .main-nav-logo2 {
+      display: none;
+      font-size: 22px;
+      margin-left: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+
+      @media screen and (max-width: 450px) {
+        display: block;
+      }
+
+      &:hover {
+        color: #ff7800;
+        transition: 0.1s ease-in-out;
+      }
+    }
+
+    .main-admin-nav-logo {
+      font-size: 14px;
+      margin-left: 2rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #ff7800;
+      cursor: pointer;
+
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: #f90716;
+        transition: 0.1s ease-in-out;
+      }
+    }
+
+    .main-admin-nav-logo2 {
+      display: none;
+      margin-left: 2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #ff7800;
+      cursor: pointer;
+
+      @media screen and (max-width: 450px) {
+        display: block;
+      }
+
+      &:hover {
+        background-color: #f90716;
+        transition: 0.1s ease-in-out;
+      }
+    }
+  }
+}

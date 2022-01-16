@@ -1,0 +1,99 @@
+.product-container {
+  height: calc(100vh - 70px);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-height: 600px) {
+    height: 100%;
+  }
+
+  .detail-wrapper {
+    background-color: #0d0d0d;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    flex-wrap: wrap;
+
+    .detail-head {
+      padding: 2rem 1rem 2rem 2rem;
+
+      @media screen and (max-width: 1260px) {
+        padding: 2rem 2rem 1rem 2rem;
+      }
+
+      .detail-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 450px;
+        display: block;
+        border-radius: 5px;
+      }
+    }
+
+    .detail-form {
+      padding: 2rem 2rem 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      @media screen and (max-width: 1260px) {
+        padding: 1rem 2rem 2rem 2rem;
+      }
+
+      .detail-title {
+        font-size: 48px;
+        font-weight: 700;
+        text-align: left;
+      }
+      .detail-price {
+        font-size: 30px;
+        text-align: left;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+      .detail-description {
+        width: 400px;
+        text-align: justify;
+
+        @media screen and (max-width: 500px) {
+          width: 200px;
+          text-align: left;
+        }
+      }
+
+      .detail-size-qty {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+
+        .detail-gap {
+          margin-right: 1rem;
+        }
+      }
+
+      .detail-button {
+        width: 100%;
+        background-color: #ff7800;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        &:hover {
+          background-color: #f90716;
+        }
+      }
+    }
+  }
+}
