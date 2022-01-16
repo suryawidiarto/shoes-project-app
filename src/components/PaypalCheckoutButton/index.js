@@ -12,6 +12,7 @@ const PaypalCheckoutButton = () => {
   const OrderDetail = useSelector((state) => state.OrderDetail);
   const { _id, orderPrice, orderedItems } = OrderDetail.data;
 
+  const client_id = process.env.REACT_APP_CLIENT_ID;
   const amount = orderPrice.total_price;
   const currency = "USD";
   const style = { layout: "horizontal", color: "blue", tagline: false, label: "pay" };
@@ -70,7 +71,7 @@ const PaypalCheckoutButton = () => {
     <div style={{ width: "100%" }}>
       <PayPalScriptProvider
         options={{
-          "client-id": process.env.REACT_APP_CLIENT_ID,
+          "client-id": client_id,
           components: "buttons",
           currency: "USD",
         }}
