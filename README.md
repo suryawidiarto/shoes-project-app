@@ -1,7 +1,9 @@
-
 # Shoes Project
+
 Easy use online shop with paypal as payment !
+
 ## Live Demo
+
 Please make sure that this server was online before accessing the demo app
 
 **Server :**
@@ -13,9 +15,11 @@ After ensuring the server was online, you can freely access the demo app
 https://shoes-project.herokuapp.com/
 
 ### Don't Use Real Email / Password
+
 For safety reason please don't use your real data on this demo app when registering/submitting your account data
 
 ### Payment Account
+
 If you don't have any paypal sandbox account feel free to use this account
 
 **Email**
@@ -24,8 +28,10 @@ sb-43whbm11436603@personal.example.com
 
 **Password :**
 
->$Y94SxU
+> $Y94SxU
+
 ## Features
+
 - Add product to cart
 - View order detail
 - Easy payment with paypal sandbox
@@ -35,23 +41,23 @@ sb-43whbm11436603@personal.example.com
 - Full Responsive
 - Cross platform
 
-
 ## Tech Used
+
 **Client :** React.js, Redux, React-Redux, Redux-Thunk, React-Router-Dom, Axios, React-Scroll, Styled-Components, MaterialUI, Sass
 
 **Server :** Node.js, Express.js, @aws-sdk/client-s3, Mongoose, Cors, Crypto-Js, Dotenv, Jsonwebtoken, Multer
 
 **Server Source Code :** [click here](https://github.com/suryawidiarto/shoes-project-server)
 
-
 ## Future Development
+
 - Improving UI
 - More payment method
 - More interactive feature
 - Optimizing performance
 
-
 ## App Screenshots
+
 ### User
 
 ![landingpg](https://user-images.githubusercontent.com/24983923/149732619-f94fd5b8-d296-41a1-93cc-39d6098e0527.png)
@@ -105,6 +111,7 @@ sb-43whbm11436603@personal.example.com
 ![adminorderdetailpg](https://user-images.githubusercontent.com/24983923/149735234-dbc24c99-a1b9-4e9b-9992-1eb6c0993d8e.png)
 
 ![addedprod](https://user-images.githubusercontent.com/24983923/149736856-d78a8152-2aba-4833-98c4-bc625b9a5b8c.png)
-## Author
-- [@suryawidiarto](https://github.com/suryawidiarto)
 
+## Author
+
+- [@suryawidiarto](https://github.com/suryawidiarto)
