@@ -9,6 +9,8 @@ Please make sure that this server was online before accessing the demo app
 **Server :**
 http://shoes-project-server.herokuapp.com/
 
+**Server Source Code :** [click here](https://github.com/suryawidiarto/shoes-project-server)
+
 After ensuring the server was online, you can freely access the demo app
 
 **App :**
@@ -46,8 +48,6 @@ sb-43whbm11436603@personal.example.com
 **Client :** React.js, Redux, React-Redux, Redux-Thunk, React-Router-Dom, Axios, React-Scroll, Styled-Components, MaterialUI, Sass
 
 **Server :** Node.js, Express.js, @aws-sdk/client-s3, Mongoose, Cors, Crypto-Js, Dotenv, Jsonwebtoken, Multer
-
-**Server Source Code :** [click here](https://github.com/suryawidiarto/shoes-project-server)
 
 ## Future Development
 
