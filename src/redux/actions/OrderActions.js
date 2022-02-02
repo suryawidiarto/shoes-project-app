@@ -23,8 +23,8 @@ export const addShippingData = (shippingData) => {
         warn: "success",
       });
       localStorage.setItem("ShippingData", JSON.stringify(getState().ShippingData.data));
-    } catch (error) {
-      dispatch({ type: "ERROR_SHIPPING_DATA", payload: error, warn: "failed" });
+    } catch (err) {
+      dispatch({ type: "ERROR_SHIPPING_DATA", payload: err, warn: "failed" });
     }
   };
 };
@@ -34,7 +34,7 @@ export const createOrder = (orderData) => {
     try {
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `https://shoes-project-server.herokuapp.com/sp-api-orders/add-order`,
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-orders/add-order`,
         {
           userId: orderData.userId,
           orderedItems: orderData.cart,
@@ -54,25 +54,15 @@ export const createOrder = (orderData) => {
             Authorization: `Bearer ${token}`,
           },
         }
-      )
-        .then((res) => {
-          dispatch({ type: "ADD_ORDER_DATA", payload: { orderId: res.data._id }, warn: "success" });
-          localStorage.removeItem("ShippingData");
-        })
-        .catch((err) =>
-          dispatch({
-            type: "ERROR_ORDER_DATA",
-            payload: {
-              error: err,
-            },
-            warn: "failed",
-          })
-        );
-    } catch (error) {
+      ).then((res) => {
+        dispatch({ type: "ADD_ORDER_DATA", payload: { orderId: res.data._id }, warn: "success" });
+        localStorage.removeItem("ShippingData");
+      });
+    } catch (err) {
       dispatch({
         type: "ERROR_ORDER_DATA",
         payload: {
-          error: error,
+          error: err,
         },
         warn: "failed",
       });
@@ -86,7 +76,7 @@ export const getOrderByIdUser = () => {
       const userId = getState().UserSign.data.id;
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `https://shoes-project-server.herokuapp.com/sp-api-orders/ordered`,
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-orders/ordered`,
         {
           userId: userId,
         },
@@ -95,11 +85,9 @@ export const getOrderByIdUser = () => {
             Authorization: `Bearer ${token}`,
           },
         }
-      )
-        .then((res) => dispatch({ type: "GET_ORDER_DATA_BY_USER_ID", payload: res.data }))
-        .catch((err) => dispatch({ type: "ERROR_ORDER_DATA_BY_USER_ID", payload: err }));
-    } catch (error) {
-      dispatch({ type: "ERROR_ORDER_DATA_BY_USER_ID", payload: error });
+      ).then((res) => dispatch({ type: "GET_ORDER_DATA_BY_USER_ID", payload: res.data }));
+    } catch (err) {
+      dispatch({ type: "ERROR_ORDER_DATA_BY_USER_ID", payload: err });
     }
   };
 };
@@ -108,13 +96,11 @@ export const getOrderByOrderId = (orderId) => {
   return async (dispatch, getState) => {
     try {
       const token = getState().UserSign.data.token;
-      await Axios.get(`https://shoes-project-server.herokuapp.com/sp-api-orders/order/${orderId}`, {
+      await Axios.get(`${process.env.REACT_APP_SERVER_URL}/sp-api-orders/order/${orderId}`, {
         headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((res) => dispatch({ type: "GET_ORDER_DATA_BY_ORDER_ID", payload: res.data }))
-        .catch((err) => dispatch({ type: "ERROR_ORDER_DETAIL", payload: err }));
-    } catch (error) {
-      dispatch({ type: "ERROR_ORDER_DETAIL", payload: error });
+      }).then((res) => dispatch({ type: "GET_ORDER_DATA_BY_ORDER_ID", payload: res.data }));
+    } catch (err) {
+      dispatch({ type: "ERROR_ORDER_DETAIL", payload: err });
     }
   };
 };
@@ -124,7 +110,7 @@ export const makePayment = (orderId) => {
     try {
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `https://shoes-project-server.herokuapp.com/sp-api-orders/payment`,
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-orders/payment`,
         {
           orderId: orderId,
           isPaid: true,
@@ -135,13 +121,11 @@ export const makePayment = (orderId) => {
             Authorization: `Bearer ${token}`,
           },
         }
-      )
-        .then((res) =>
-          dispatch({ type: "MAKE_PAYMENT_SUCCESS", payload: res.data, warn: "success" })
-        )
-        .catch((err) => dispatch({ type: "ERROR_ORDER_DETAIL", payload: err, warn: "failed" }));
-    } catch (error) {
-      dispatch({ type: "ERROR_ORDER_DETAIL", payload: error, warn: "failed" });
+      ).then((res) =>
+        dispatch({ type: "MAKE_PAYMENT_SUCCESS", payload: res.data, warn: "success" })
+      );
+    } catch (err) {
+      dispatch({ type: "ERROR_ORDER_DETAIL", payload: err, warn: "failed" });
     }
   };
 };
@@ -151,20 +135,18 @@ export const confirmDelivered = (orderId) => {
     try {
       const token = getState().UserSign.data.token;
       await Axios.post(
-        `https://shoes-project-server.herokuapp.com/sp-api-orders/delivered`,
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-orders/delivered`,
         {
           orderId: orderId,
           isDelivered: true,
           deliveredAt: Date.now(),
         },
         { headers: { Authorization: `Bearer ${token}` } }
-      )
-        .then((res) =>
-          dispatch({ type: "CONFIRM_DELIVERED_SUCCESS", payload: res.data, warn: "success" })
-        )
-        .catch((err) => dispatch({ type: "ERROR_ORDER_DETAIL", payload: err, warn: "failed" }));
-    } catch (error) {
-      dispatch({ type: "ERROR_ORDER_DETAIL", payload: error, warn: "failed" });
+      ).then((res) =>
+        dispatch({ type: "CONFIRM_DELIVERED_SUCCESS", payload: res.data, warn: "success" })
+      );
+    } catch (err) {
+      dispatch({ type: "ERROR_ORDER_DETAIL", payload: err, warn: "failed" });
     }
   };
 };

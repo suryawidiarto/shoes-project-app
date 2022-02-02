@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ProductSize from "../../components/ProductSize";
 import { useParams } from "react-router-dom";
-import "./ProductDetail.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductById } from "../../redux/actions/ProductActions";
-import Loading from "../../components/Loading";
 import { addToCart } from "../../redux/actions/CartActions";
 import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import Loading from "../../components/Loading";
+import ProductSize from "../../components/ProductSize";
 import ProductQty from "../../components/ProductQty";
+import "./ProductDetail.scss";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -84,7 +84,7 @@ const ProductDetail = () => {
             alt="detail-img"
             src={
               data &&
-              `https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${data.image[0]}`
+              `${process.env.REACT_APP_SERVER_URL}/sp-api-products/product-img/${data.image[0]}`
             }
           />
         </div>

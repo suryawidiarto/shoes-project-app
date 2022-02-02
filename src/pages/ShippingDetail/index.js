@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createOrder } from "../../redux/actions/OrderActions";
+import { resetItemCart } from "../../redux/actions/CartActions";
+import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import { useNavigate } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,14 +13,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
-
-import "./ShippingDetail.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { createOrder } from "../../redux/actions/OrderActions";
-import { resetItemCart } from "../../redux/actions/CartActions";
-import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
-import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
+import "./ShippingDetail.scss";
 
 const ShippingDetail = () => {
   const dispatch = useDispatch();
@@ -140,7 +139,7 @@ const ShippingDetail = () => {
                           <img
                             className="shipping-image"
                             alt="shipping-img"
-                            src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.productImage}`}
+                            src={`${process.env.REACT_APP_SERVER_URL}/sp-api-products/product-img/${item.productImage}`}
                           />
                         </TableCell>
                         <TableCell align="center">{item.productName}</TableCell>

@@ -1,6 +1,5 @@
 import React from "react";
 import { FT_L_Order, FT_L_Payment, FT_L_Quality, FT_L_Shipment } from "../../images";
-
 import "./FeatureSection.scss";
 
 const FeatureSection = (props) => {

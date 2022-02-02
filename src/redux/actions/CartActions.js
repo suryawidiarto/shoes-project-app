@@ -4,15 +4,15 @@ export const getCartItem = () => {
   return async (dispatch, getState) => {
     try {
       const userData = getState().UserSign.data;
-      await Axios.get("https://shoes-project-server.herokuapp.com/sp-api-users/cart", {
+      await Axios.get(`${process.env.REACT_APP_SERVER_URL}/sp-api-users/cart`, {
         headers: {
           Authorization: `Bearer ${userData.token}`,
         },
       }).then((res) => dispatch({ type: "CART_GET_ITEM", payload: res.data }));
 
       localStorage.setItem("Cart", JSON.stringify(getState().Cart.items));
-    } catch (error) {
-      dispatch({ type: "CART_ERROR", payload: error });
+    } catch (err) {
+      dispatch({ type: "CART_ERROR", payload: err });
     }
   };
 };
@@ -36,7 +36,7 @@ export const addToCart = (sizeProduct, qtyProduct) => {
       const cartItems = getState().Cart.items;
       const userData = getState().UserSign.data;
       await Axios.post(
-        "https://shoes-project-server.herokuapp.com/sp-api-users/item-cart",
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-users/item-cart`,
         {
           cartItems: cartItems,
         },
@@ -60,7 +60,7 @@ export const deleteItemCart = (itemIndex) => {
       const cartItems = getState().Cart.items;
       const userData = getState().UserSign.data;
       await Axios.post(
-        "https://shoes-project-server.herokuapp.com/sp-api-users/item-cart",
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-users/item-cart`,
         {
           cartItems: cartItems,
         },
@@ -83,7 +83,7 @@ export const resetItemCart = () => {
       dispatch({ type: "CART_RESET" });
       const userData = getState().UserSign.data;
       await Axios.post(
-        "https://shoes-project-server.herokuapp.com/sp-api-users/item-cart",
+        `${process.env.REACT_APP_SERVER_URL}/sp-api-users/item-cart`,
         {
           cartItems: [],
         },
@@ -94,8 +94,8 @@ export const resetItemCart = () => {
         }
       );
       localStorage.removeItem("Cart");
-    } catch (error) {
-      dispatch({ type: "CART_ERROR", payload: error, warn: "failed" });
+    } catch (err) {
+      dispatch({ type: "CART_ERROR", payload: err, warn: "failed" });
     }
   };
 };

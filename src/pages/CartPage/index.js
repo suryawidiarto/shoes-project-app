@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteItemCart } from "../../redux/actions/CartActions";
+import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,11 +10,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Link, useNavigate } from "react-router-dom";
 import "./CartPage.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteItemCart } from "../../redux/actions/CartActions";
-import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -76,7 +76,7 @@ const CartPage = () => {
                       <img
                         className="cart-image"
                         alt="cart-img"
-                        src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.productImage}`}
+                        src={`${process.env.REACT_APP_SERVER_URL}/sp-api-products/product-img/${item.productImage}`}
                       />
                     </TableCell>
                     <TableCell align="center">{item.productName}</TableCell>

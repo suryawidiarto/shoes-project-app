@@ -40,7 +40,6 @@ const Routers = () => {
             <Route path="data-order/order-detail/:orderId" element={<AdminDataOrderDetail />} />
           </Route>
         </Route>
-
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
       </Routes>

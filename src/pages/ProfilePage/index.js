@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, updateUser } from "../../redux/actions/UserActions";
 import { useNavigate } from "react-router-dom";
+import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import TextField from "@mui/material/TextField";
 import Loading from "../../components/Loading";
 import "./ProfilePage.scss";
-import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
 
 const ProfilePage = () => {
   const navigate = useNavigate();

@@ -1,11 +1,4 @@
 import React, { useEffect, useState } from "react";
-
-import Avatar from "@mui/material/Avatar";
-import MenuItem from "@mui/material/MenuItem";
-import MenuList from "@mui/material/MenuList";
-import Paper from "@mui/material/Paper";
-
-import "./MainNavigation.scss";
 import {
   DropdownList,
   DropdownMenu,
@@ -17,9 +10,14 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../../redux/actions/UserActions";
+import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import Avatar from "@mui/material/Avatar";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import Paper from "@mui/material/Paper";
 import Badge from "@mui/material/Badge";
 import CartIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import "./MainNavigation.scss";
 
 const MainNavigation = () => {
   const dispatch = useDispatch();

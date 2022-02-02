@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { editProductAdmin, getProductByIdAdmin } from "../../redux/actions/AdminActions";
-import ArrowBackIcon from "@mui/icons-material/ArrowBackIosNew";
 import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import TextField from "@mui/material/TextField";
+import ArrowBackIcon from "@mui/icons-material/ArrowBackIosNew";
 import "./AdminEditDataProduct.scss";
 
 const AdminEditDataProduct = () => {
@@ -255,7 +255,7 @@ const AdminEditDataProduct = () => {
                 <img
                   className="edit-upload-img"
                   alt="img-preview"
-                  src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${imgDB}`}
+                  src={`${process.env.REACT_APP_SERVER_URL}/sp-api-products/product-img/${imgDB}`}
                 />
               ) : imgFile && imgPreview ? (
                 <img className="edit-upload-img" alt="img-preview" src={imgPreview} />

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import TextField from "@mui/material/TextField";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Radio from "@mui/material/Radio";
-
-import "./ShippingPage.scss";
 import { getUser, updateUser } from "../../redux/actions/UserActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addShippingData } from "../../redux/actions/OrderActions";
 import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import TextField from "@mui/material/TextField";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+import "./ShippingPage.scss";
 
 const ShippingPage = () => {
   const dispatch = useDispatch();

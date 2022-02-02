@@ -20,6 +20,18 @@ https://shoes-project.herokuapp.com/
 
 For safety reason please don't use your real data on this demo app when registering/submitting your account data
 
+## Admin Account
+
+You can use this account when logged in for accessing admin dashboard
+
+**Email**
+
+admin@admin.com
+
+**Password :**
+
+12345678
+
 ### Payment Account
 
 If you don't have any paypal sandbox account feel free to use this account
@@ -30,7 +42,7 @@ sb-43whbm11436603@personal.example.com
 
 **Password :**
 
-">$Y94SxU"
+"**>$Y94SxU**"
 
 Without Quotation Marks ( "**password**" )
 
@@ -41,7 +53,7 @@ Without Quotation Marks ( "**password**" )
 - Easy payment with paypal sandbox
 - Auto logout on session expired after 1 hour
 - Encryption on password
-- Admin controll over product
+- Admin control over product
 - Full Responsive
 - Cross platform
 
@@ -49,7 +61,7 @@ Without Quotation Marks ( "**password**" )
 
 **Client :** React.js, Redux, React-Redux, Redux-Thunk, React-Router-Dom, Axios, React-Scroll, Styled-Components, MaterialUI, Sass
 
-**Server :** Node.js, Express.js, @aws-sdk/client-s3, Mongoose, Cors, Crypto-Js, Dotenv, Jsonwebtoken, Multer
+**Server :** Node.js, Express.js, @aws-sdk/client-s3, Mongoose, Cors, Crypto-Js, Dotenv, Jsonwebtoken, Multer, Redis
 
 ## Future Development
 

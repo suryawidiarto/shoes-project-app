@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { IS_Alpha, IS_Exodus, IS_Protector } from "../../images";
 import MainSection from "../../components/MainSection";
 import NavigationBar from "../../components/NavigationBar";
 import SideBar from "../../components/SideBar";
 import InfoSection from "../../components/InfoSection";
 import FeatureSection from "../../components/FeatureSection";
 import Footer from "../../components/Footer";
-import { IS_Alpha, IS_Exodus, IS_Protector } from "../../images";
-import "./LandingPage.scss";
 import InfoSection2 from "../../components/InfoSection2";
+import "./LandingPage.scss";
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);

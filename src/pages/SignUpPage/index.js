@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { signUp } from "../../redux/actions/UserActions";
+import { useDispatch, useSelector } from "react-redux";
+import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import EmailIcon from "@mui/icons-material/EmailOutlined";
 import LockIcon from "@mui/icons-material/Lock";
-import { Link, useNavigate } from "react-router-dom";
-import "./SignUpPage.scss";
-import { signUp } from "../../redux/actions/UserActions";
-import { useDispatch, useSelector } from "react-redux";
 import NotificationPop from "../../components/NotificationPop";
-import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import "./SignUpPage.scss";
 
 const SignUpPage = () => {
   const navigate = useNavigate();

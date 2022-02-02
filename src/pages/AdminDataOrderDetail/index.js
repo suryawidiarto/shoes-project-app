@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { getOrderByIdAdmin } from "../../redux/actions/AdminActions";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -7,10 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import ArrowBackIcon from "@mui/icons-material/ArrowBackIosNew";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
-import { getOrderByIdAdmin } from "../../redux/actions/AdminActions";
 import "./AdminDataOrderDetail.scss";
 
 const AdminDataOrderDetail = () => {
@@ -90,7 +90,7 @@ const AdminDataOrderDetail = () => {
                           <img
                             className="order-detail-image"
                             alt="order-detail-img"
-                            src={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.productImage}`}
+                            src={`${process.env.REACT_APP_SERVER_URL}/sp-api-products/product-img/${item.productImage}`}
                           />
                         </TableCell>
                         <TableCell align="center">{item.productName}</TableCell>

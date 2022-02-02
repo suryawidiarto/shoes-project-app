@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import Footer from "../../components/Footer";
-import MainNavigation from "../../components/MainNavigation";
-import NotificationPop from "../../components/NotificationPop";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartItem } from "../../redux/actions/CartActions";
 import { checkToken, signOut } from "../../redux/actions/UserActions";
 import { popNotification, resetNotification } from "../../redux/actions/NotificationActions";
+import Footer from "../../components/Footer";
+import MainNavigation from "../../components/MainNavigation";
+import NotificationPop from "../../components/NotificationPop";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";

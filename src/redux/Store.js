@@ -52,6 +52,7 @@ const Reducer = combineReducers({
   AdminDataOrder: adminDataOrderReducers,
 });
 
+//const ComposeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const ComposeEnhancer = compose;
 
 const Store = createStore(Reducer, InitialState, ComposeEnhancer(applyMiddleware(thunk)));

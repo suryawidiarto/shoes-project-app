@@ -1,10 +1,9 @@
 import React from "react";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
-import CloseIcon from "@mui/icons-material/Close";
-
-import "./SideBar.scss";
 import { SidebarContainer } from "./SideBarElements";
+import CloseIcon from "@mui/icons-material/Close";
+import "./SideBar.scss";
 
 const SideBar = ({ isOpen, toggleSideBar }) => {
   return (

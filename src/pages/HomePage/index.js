@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getAllProduct } from "../../redux/actions/ProductActions";
 import Loading from "../../components/Loading";
 import ProductCard from "../../components/ProductCard";
-import { getAllProduct } from "../../redux/actions/ProductActions";
 import Pagination from "@mui/material/Pagination";
 import "./HomePage.scss";
 
@@ -35,7 +35,7 @@ const HomePage = () => {
             data.items.map((item) => (
               <ProductCard
                 key={item._id}
-                Img={`https://shoes-project-server.herokuapp.com/sp-api-products/product-img/${item.image[0]}`}
+                Img={`${process.env.REACT_APP_SERVER_URL}/sp-api-products/product-img/${item.image[0]}`}
                 Title={item.name}
                 Price={item.price}
                 Description={item.description}
