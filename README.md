@@ -20,7 +20,7 @@ https://shoes-project.herokuapp.com/
 
 For safety reason please don't use your real data on this demo app when registering/submitting your account data
 
-## Admin Account
+### Admin Account
 
 You can use this account when logged in for accessing admin dashboard
 
