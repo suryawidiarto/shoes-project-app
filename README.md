@@ -30,7 +30,9 @@ sb-43whbm11436603@personal.example.com
 
 **Password :**
 
-> $Y94SxU
+">$Y94SxU"
+
+Without Quotation Marks ( "**password**" )
 
 ## Features
 
